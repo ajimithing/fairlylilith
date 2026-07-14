@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fairly Lilith — The Women Who Rocked the 90s</title>
+<meta name="description" content="Fairly Lilith is a live tribute to the women who rocked the 90s — Alanis Morissette, Sarah McLachlan, Sheryl Crow, The Cranberries, and more. Debut show September 30 at MadLife Stage and Studios, Woodstock, GA.">
+
+<!-- Schema.org structured data for the debut show -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "name": "Fairly Lilith — Live at MadLife",
+  "startDate": "2026-09-30T19:30:00-04:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "MadLife Stage and Studios",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Woodstock",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    }
+  },
+  "performer": {
+    "@type": "MusicGroup",
+    "name": "Fairly Lilith"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.eventbrite.com",
+    "availability": "https://schema.org/InStock"
+  },
+  "image": "images/hero-art.png",
+  "description": "A live tribute to the women who rocked the 90s pop and rock radio — debut performance at MadLife Stage and Studios."
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --indigo: #1B2340;
+    --indigo-deep: #12172B;
+    --parchment: #E8DFC8;
+    --parchment-light: #F1EBDA;
+    --sage: #7C8B7A;
+    --gold: #C9B37E;
+    --gold-bright: #DCC694;
+    --oxblood: #5C1F1F;
+    --ink: #2A2620;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', serif;
+    background: var(--parchment);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* subtle paper grain overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+
+  h1, h2, h3, .script {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .eyebrow {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: var(--gold);
+  }
+
+  a { color: inherit; }
+
+  /* ===== Nav ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 2.2rem;
+    background: rgba(18, 23, 43, 0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(201, 179, 126, 0.25);
+  }
+
+  .nav-name img {
+    height: 42px;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--parchment-light);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: opacity 0.25s ease, color 0.25s ease;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold-bright); }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--parchment-light);
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--indigo-deep);
+    padding: 7rem 1.5rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-frame {
+    position: relative;
+    max-width: 560px;
+    width: 100%;
+  }
+
+  .hero-frame img {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 40px 90px -25px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,179,126,0.2);
+  }
+
+  .hero-caption {
+    text-align: center;
+    margin-top: 1.7rem;
+  }
+
+  .hero-caption .eyebrow { color: var(--gold-bright); }
+
+  .hero-caption p {
+    color: var(--parchment-light);
+    font-style: italic;
+    opacity: 0.75;
+    margin-top: 0.5rem;
+    font-size: 1.05rem;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    animation: bob 2.4s ease-in-out infinite;
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
+  }
+
+  /* ===== Torn divider ===== */
+  .torn-divider {
+    position: relative;
+    height: 60px;
+    background: var(--parchment);
+  }
+  .torn-divider svg { display: block; width: 100%; height: 100%; }
+
+  .torn-divider.into-indigo svg path { fill: var(--indigo-deep); }
+  .torn-divider.into-parchment { background: var(--indigo-deep); }
+  .torn-divider.into-parchment svg path { fill: var(--parchment); }
+
+  /* ===== Section base ===== */
+  section {
+    padding: 5.5rem 1.5rem;
+  }
+
+  .section-inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== About ===== */
+  .about {
+    text-align: center;
+  }
+
+  .about h2 {
+    font-size: 2.6rem;
+    margin: 0.6rem 0 1.6rem;
+    color: var(--indigo);
+  }
+
+  .about p {
+    font-size: 1.18rem;
+    max-width: 640px;
+    margin: 0 auto 1.2rem;
+  }
+
+  .artist-strip {
+    margin-top: 2.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+  }
+
+  .artist-strip span {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--oxblood);
+    position: relative;
+    padding: 0 0.2rem;
+  }
+
+  .artist-strip span:not(:last-child)::after {
+    content: "•";
+    margin-left: 1rem;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ===== Show info ===== */
+  .show {
+    background: var(--indigo-deep);
+    color: var(--parchment-light);
+    text-align: center;
+  }
+
+  .show h2 { font-size: 2.4rem; color: var(--parchment-light); margin-bottom: 0.4rem; }
+
+  .show .eyebrow { display: block; margin-bottom: 0.8rem; }
+
+  .show-card {
+    margin: 2.8rem auto 0;
+    max-width: 460px;
+    border: 1px solid rgba(201,179,126,0.35);
+    padding: 2.4rem 2rem;
+    border-radius: 3px;
+    background: rgba(232, 223, 200, 0.03);
+  }
+
+  .show-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.9rem;
+    color: var(--gold-bright);
+    line-height: 1.1;
+  }
+
+  .show-date small {
+    display: block;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--parchment-light);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+  }
+
+  .show-venue {
+    margin-top: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  .show-venue span {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.65;
+    margin-top: 0.2rem;
+  }
+
+  .ticket-btn {
+    display: inline-block;
+    margin-top: 1.8rem;
+    padding: 0.85rem 2.4rem;
+    background: var(--gold);
+    color: var(--indigo-deep);
+    text-decoration: none;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .ticket-btn:hover {
+    background: var(--gold-bright);
+    transform: translateY(-2px);
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    background: var(--indigo-deep);
+    color: var(--parchment-light);
+    text-align: center;
+    padding: 2.5rem 1.5rem 3rem;
+    border-top: 1px solid rgba(201,179,126,0.2);
+  }
+
+  footer .script img {
+    height: 58px;
+    display: inline-block;
+  }
+
+  .social-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+    margin: 1.2rem 0 1.6rem;
+  }
+
+  .social-row a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--parchment-light);
+    opacity: 0.8;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: opacity 0.25s ease, border-color 0.25s ease;
+  }
+  .social-row a:hover { opacity: 1; border-color: var(--gold); }
+
+  footer .fine-print {
+    font-size: 0.75rem;
+    opacity: 0.45;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  /* ===== Mobile ===== */
+  @media (max-width: 720px) {
+    .nav-links { 
+      position: fixed;
+      top: 62px; right: 0;
+      background: var(--indigo-deep);
+      flex-direction: column;
+      gap: 0;
+      width: 220px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      border-left: 1px solid rgba(201,179,126,0.25);
+      border-bottom: 1px solid rgba(201,179,126,0.25);
+    }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links li { border-top: 1px solid rgba(201,179,126,0.12); }
+    .nav-links a { display: block; padding: 1rem 1.4rem; }
+    .nav-toggle { display: block; }
+    .about h2, .show h2 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top" class="nav-name"><img src="images/wordmark-horizontal.png" alt="Fairly Lilith"></a>
+  <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">&#9776;</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#setlist">The Set</a></li>
+    <li><a href="#show">Tickets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div id="top" class="hero">
+  <div class="hero-frame">
+    <img src="images/hero-art.png" alt="Fairly Lilith — The Women Who Rocked the 90s">
+    <div class="hero-caption">
+      <span class="eyebrow">Live in Woodstock, Georgia</span>
+      <p>A tribute to the women who ruled 90s pop and rock radio.</p>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</div>
+
+<div class="torn-divider into-indigo">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,20 L40,32 L85,14 L130,30 L175,10 L220,28 L265,16 L310,34 L355,12 L400,26 L445,18 L490,32 L535,14 L580,28 L625,10 L670,30 L715,16 L760,26 L805,12 L850,32 L895,18 L940,28 L985,14 L1030,30 L1075,16 L1120,26 L1165,14 L1200,22 L1200,60 L0,60 Z"></path></svg>
+</div>
+
+<section class="about reveal" id="about">
+  <div class="section-inner">
+    <span class="eyebrow">Our Story</span>
+    <h2>Not everyone on this bill played Lilith Fair.<br>They all deserved to.</h2>
+    <p>Fairly Lilith brings the sound of 90s female-fronted pop and rock back to the stage &mdash; the radio anthems, the aching ballads, the songs that defined a decade of women who wrote their own rules. Some of these artists graced Sarah McLachlan's original stage. Others just as easily could have.</p>
+    <p>Either way, it's a fairly accurate night of music you already know every word to.</p>
+    <div class="artist-strip">
+      <span>Alanis Morissette</span>
+      <span>Sarah McLachlan</span>
+      <span>The Cranberries</span>
+      <span>Sheryl Crow</span>
+      <span>Natalie Imbruglia</span>
+      <span>4 Non Blondes</span>
+      <span>Jewel</span>
+      <span>Shawn Colvin</span>
+      <span>&amp; more</span>
+    </div>
+  </div>
+</section>
+
+<div class="torn-divider">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" style="transform: scaleY(-1);"><path d="M0,20 L40,32 L85,14 L130,30 L175,10 L220,28 L265,16 L310,34 L355,12 L400,26 L445,18 L490,32 L535,14 L580,28 L625,10 L670,30 L715,16 L760,26 L805,12 L850,32 L895,18 L940,28 L985,14 L1030,30 L1075,16 L1120,26 L1165,14 L1200,22 L1200,60 L0,60 Z" fill="#1B2340"></path></svg>
+</div>
+
+<section class="show" id="show">
+  <div class="section-inner reveal">
+    <span class="eyebrow">Debut Performance</span>
+    <h2>Live at MadLife</h2>
+    <div class="show-card">
+      <div class="show-date">Sept 30<small>Wednesday &middot; 2026</small></div>
+      <div class="show-venue">MadLife Stage and Studios<span>Woodstock, Georgia</span></div>
+      <a href="https://www.eventbrite.com" class="ticket-btn" target="_blank" rel="noopener">Get Tickets</a>
+    </div>
+  </div>
+</section>
+
+<div class="torn-divider into-parchment">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,20 L40,32 L85,14 L130,30 L175,10 L220,28 L265,16 L310,34 L355,12 L400,26 L445,18 L490,32 L535,14 L580,28 L625,10 L670,30 L715,16 L760,26 L805,12 L850,32 L895,18 L940,28 L985,14 L1030,30 L1075,16 L1120,26 L1165,14 L1200,22 L1200,60 L0,60 Z"></path></svg>
+</div>
+
+<section class="about reveal" id="setlist">
+  <div class="section-inner">
+    <span class="eyebrow">What You'll Hear</span>
+    <h2>Every song you swore you'd forgotten the words to</h2>
+    <p>From the anthems that ruled alternative radio to the ballads that closed out a decade, expect a set built for singing along &mdash; loudly, unapologetically, and maybe a little off-key.</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="script"><img src="images/wordmark-horizontal.png" alt="Fairly Lilith"></div>
+  <div class="social-row">
+    <a href="https://instagram.com/fairlylilith" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://facebook.com/fairlylilithband" target="_blank" rel="noopener">Facebook</a>
+    <a href="mailto:booking@fairlylilith.com">booking@fairlylilith.com</a>
+  </div>
+  <div class="fine-print">Fairly Lilith is an independent tribute act. Not affiliated with Lilith Fair or any of the original recording artists.</div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

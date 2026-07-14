@@ -5,6 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fairly Lilith — The Women Who Rocked the 90s</title>
 <meta name="description" content="Fairly Lilith is a live tribute to the women who rocked the 90s — Alanis Morissette, Sarah McLachlan, Sheryl Crow, The Cranberries, and more. Debut show September 30 at MadLife Stage and Studios, Woodstock, GA.">
+<meta name="keywords" content="Fairly Lilith, 90s tribute band, Lilith Fair tribute, women of 90s rock, Alanis Morissette tribute, Sarah McLachlan tribute, Cranberries tribute, MadLife Woodstock, Atlanta tribute band, live music Woodstock GA">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Fairly Lilith">
+<link rel="canonical" href="https://fairlylilith.com/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fairlylilith.com/">
+<meta property="og:title" content="Fairly Lilith — The Women Who Rocked the 90s">
+<meta property="og:description" content="A live tribute to the women who ruled 90s pop and rock radio. Debut performance September 30 at MadLife Stage and Studios, Woodstock, GA.">
+<meta property="og:image" content="https://fairlylilith.com/images/hero-art.png">
+<meta property="og:image:width" content="1070">
+<meta property="og:image:height" content="1072">
+<meta property="og:site_name" content="Fairly Lilith">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://fairlylilith.com/">
+<meta name="twitter:title" content="Fairly Lilith — The Women Who Rocked the 90s">
+<meta name="twitter:description" content="A live tribute to the women who ruled 90s pop and rock radio. Debut performance September 30 at MadLife Stage and Studios, Woodstock, GA.">
+<meta name="twitter:image" content="https://fairlylilith.com/images/hero-art.png">
+
+<!-- Geo tags -->
+<meta name="geo.region" content="US-GA">
+<meta name="geo.placename" content="Woodstock, Georgia">
+
 
 <!-- Schema.org structured data for the debut show -->
 <script type="application/ld+json">
@@ -27,14 +54,19 @@
   },
   "performer": {
     "@type": "MusicGroup",
-    "name": "Fairly Lilith"
+    "name": "Fairly Lilith",
+    "url": "https://fairlylilith.com/",
+    "sameAs": [
+      "https://instagram.com/fairlylilith",
+      "https://facebook.com/fairlylilith"
+    ]
   },
   "offers": {
     "@type": "Offer",
     "url": "https://www.eventbrite.com",
     "availability": "https://schema.org/InStock"
   },
-  "image": "images/hero-art.png",
+  "image": "https://fairlylilith.com/images/hero-art.png",
   "description": "A live tribute to the women who rocked the 90s pop and rock radio — debut performance at MadLife Stage and Studios."
 }
 </script>
@@ -105,28 +137,57 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 2.2rem;
+    padding: 0.3rem 2.2rem;
     background: rgba(18, 23, 43, 0.88);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid rgba(201, 179, 126, 0.25);
   }
 
   .nav-name img {
-    height: 110px;
+    height: 150px;
     display: block;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+  }
+
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--parchment-light);
+    opacity: 0.85;
+    transition: opacity 0.25s ease, color 0.25s ease;
+  }
+
+  .nav-icons a svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  .nav-icons a:hover { opacity: 1; color: var(--gold-bright); }
+
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.6rem;
     list-style: none;
   }
 
   .nav-links a {
     color: var(--parchment-light);
     text-decoration: none;
-    font-size: 0.82rem;
-    letter-spacing: 0.15em;
+    font-size: 1.05rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     opacity: 0.85;
     transition: opacity 0.25s ease, color 0.25s ease;
@@ -150,7 +211,7 @@
     align-items: center;
     justify-content: center;
     background: var(--indigo-deep);
-    padding: 9.5rem 1.5rem 4rem;
+    padding: 11.5rem 1.5rem 4rem;
     overflow: hidden;
   }
 
@@ -356,6 +417,37 @@
     display: inline-block;
   }
 
+  .icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    margin: 1.4rem 0 0.4rem;
+  }
+
+  .icon-row a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,179,126,0.35);
+    color: var(--gold-bright);
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .icon-row a svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  .icon-row a:hover {
+    background: rgba(201,179,126,0.12);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+
   .social-row {
     display: flex;
     justify-content: center;
@@ -410,12 +502,22 @@
 <nav>
   <a href="#top" class="nav-name"><img src="images/wordmark-horizontal.png" alt="Fairly Lilith"></a>
   <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">&#9776;</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#setlist">The Set</a></li>
-    <li><a href="#show">Tickets</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#show">Shows</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="https://facebook.com/fairlylilith" target="_blank" rel="noopener" aria-label="Fairly Lilith on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M13.5 21v-7.9h2.66l.4-3.09h-3.06V8.06c0-.9.25-1.5 1.54-1.5h1.64V3.8c-.28-.04-1.25-.12-2.38-.12-2.36 0-3.98 1.44-3.98 4.08v2.28H7.55v3.09h2.67V21h3.28z"/></svg>
+      </a>
+      <a href="https://instagram.com/fairlylilith" target="_blank" rel="noopener" aria-label="Fairly Lilith on Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81 0 3.19-.01 3.56-.07 4.81-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.62.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.62-.07-4.81 0-3.18.01-3.56.07-4.81.15-3.23 1.67-4.77 4.92-4.92C8.4 2.21 8.8 2.2 12 2.2zm0 2c-3.14 0-3.5.01-4.73.07-2.17.1-3.19 1.14-3.29 3.28C3.91 8.6 3.9 8.96 3.9 12c0 3.04.01 3.4.08 4.45.1 2.14 1.11 3.19 3.29 3.28 1.23.06 1.59.07 4.73.07 3.14 0 3.5-.01 4.73-.07 2.17-.09 3.19-1.14 3.29-3.28.06-1.05.08-1.41.08-4.45 0-3.04-.02-3.4-.08-4.45-.1-2.14-1.12-3.19-3.29-3.28C15.5 4.21 15.14 4.2 12 4.2zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm5.6-2.6a1.03 1.03 0 1 1-2.06 0 1.03 1.03 0 0 1 2.06 0z"/></svg>
+      </a>
+    </div>
+  </div>
 </nav>
 
 <div id="top" class="hero">
@@ -481,11 +583,33 @@
   </div>
 </section>
 
+<div class="torn-divider into-indigo">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,20 L40,32 L85,14 L130,30 L175,10 L220,28 L265,16 L310,34 L355,12 L400,26 L445,18 L490,32 L535,14 L580,28 L625,10 L670,30 L715,16 L760,26 L805,12 L850,32 L895,18 L940,28 L985,14 L1030,30 L1075,16 L1120,26 L1165,14 L1200,22 L1200,60 L0,60 Z"></path></svg>
+</div>
+
+<section class="show" id="video">
+  <div class="section-inner reveal">
+    <span class="eyebrow">See It Live</span>
+    <h2>Video</h2>
+    <p style="margin-top: 1.2rem; opacity: 0.7; font-style: italic;">Coming soon &mdash; footage from our debut performance.</p>
+  </div>
+</section>
+
+<div class="torn-divider into-parchment">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,20 L40,32 L85,14 L130,30 L175,10 L220,28 L265,16 L310,34 L355,12 L400,26 L445,18 L490,32 L535,14 L580,28 L625,10 L670,30 L715,16 L760,26 L805,12 L850,32 L895,18 L940,28 L985,14 L1030,30 L1075,16 L1120,26 L1165,14 L1200,22 L1200,60 L0,60 Z"></path></svg>
+</div>
+
 <footer id="contact">
   <div class="script"><img src="images/wordmark-horizontal.png" alt="Fairly Lilith"></div>
+  <div class="icon-row">
+    <a href="https://facebook.com/fairlylilith" target="_blank" rel="noopener" aria-label="Fairly Lilith on Facebook">
+      <svg viewBox="0 0 24 24"><path d="M13.5 21v-7.9h2.66l.4-3.09h-3.06V8.06c0-.9.25-1.5 1.54-1.5h1.64V3.8c-.28-.04-1.25-.12-2.38-.12-2.36 0-3.98 1.44-3.98 4.08v2.28H7.55v3.09h2.67V21h3.28z"/></svg>
+    </a>
+    <a href="https://instagram.com/fairlylilith" target="_blank" rel="noopener" aria-label="Fairly Lilith on Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.63.07 4.81 0 3.19-.01 3.56-.07 4.81-.15 3.23-1.66 4.77-4.92 4.92-1.25.06-1.62.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.25-.07-1.62-.07-4.81 0-3.18.01-3.56.07-4.81.15-3.23 1.67-4.77 4.92-4.92C8.4 2.21 8.8 2.2 12 2.2zm0 2c-3.14 0-3.5.01-4.73.07-2.17.1-3.19 1.14-3.29 3.28C3.91 8.6 3.9 8.96 3.9 12c0 3.04.01 3.4.08 4.45.1 2.14 1.11 3.19 3.29 3.28 1.23.06 1.59.07 4.73.07 3.14 0 3.5-.01 4.73-.07 2.17-.09 3.19-1.14 3.29-3.28.06-1.05.08-1.41.08-4.45 0-3.04-.02-3.4-.08-4.45-.1-2.14-1.12-3.19-3.29-3.28C15.5 4.21 15.14 4.2 12 4.2zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm5.6-2.6a1.03 1.03 0 1 1-2.06 0 1.03 1.03 0 0 1 2.06 0z"/></svg>
+    </a>
+  </div>
   <div class="social-row">
-    <a href="https://instagram.com/fairlylilith" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://facebook.com/fairlylilithband" target="_blank" rel="noopener">Facebook</a>
     <a href="mailto:booking@fairlylilith.com">booking@fairlylilith.com</a>
   </div>
   <div class="fine-print">Fairly Lilith is an independent tribute act. Not affiliated with Lilith Fair or any of the original recording artists.</div>

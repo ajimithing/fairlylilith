@@ -93,14 +93,6 @@
 
   html { scroll-behavior: smooth; }
 
-  .page-border {
-    position: fixed;
-    inset: 12px;
-    border: 1px solid rgba(201, 179, 126, 0.45);
-    pointer-events: none;
-    z-index: 998;
-  }
-
   body {
     font-family: 'EB Garamond', serif;
     background: var(--parchment);
@@ -237,7 +229,8 @@
     width: 100%;
     display: block;
     border-radius: 4px;
-    box-shadow: 0 40px 90px -25px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,179,126,0.2);
+    border: 1px solid rgba(201, 179, 126, 0.6);
+    box-shadow: 0 40px 90px -25px rgba(0,0,0,0.7);
   }
 
   .hero-caption {
@@ -602,7 +595,6 @@
 </style>
 </head>
 <body>
-<div class="page-border"></div>
 
 <nav>
   <a href="#top" class="nav-name"><img src="images/wordmark-horizontal.png" alt="Fairly Lilith"></a>

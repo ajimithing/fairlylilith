@@ -442,65 +442,51 @@
     background: rgba(232, 223, 200, 0.03);
   }
 
-  .gig-date-badge {
-    width: 68px;
-    height: 68px;
-    margin: 0 auto 1.2rem;
-    border: 1px solid rgba(201,179,126,0.5);
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold-bright);
-  }
-
-  .gig-date-badge .day-num {
-    font-family: 'Cormorant SC', serif;
-    font-weight: 700;
-    font-size: 1.7rem;
+  .show-date-block {
     line-height: 1;
   }
 
-  .gig-date-badge .month {
+  .show-date-block .day-num {
     font-family: 'Cormorant SC', serif;
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-top: 0.2rem;
-    opacity: 0.8;
-  }
-
-  .show-venue {
-    font-size: 1.3rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-family: 'Cormorant SC', serif;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 3rem;
     color: var(--gold-bright);
   }
 
-  .show-venue span {
-    display: block;
-    font-family: 'EB Garamond', serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.04em;
-    text-transform: none;
-    opacity: 0.75;
-    margin-top: 0.3rem;
-  }
-
-  .bit-widget-wrap {
-    margin: 2.4rem auto 0;
-    max-width: 560px;
-  }
-
-  .show-datetime {
-    margin-top: 0.9rem;
-    font-family: 'EB Garamond', serif;
-    font-size: 1rem;
+  .show-date-block .month {
+    font-family: 'Cormorant SC', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
     opacity: 0.85;
+    margin-right: 0.4rem;
+  }
+
+  .show-date-block .dow {
+    margin-top: 0.4rem;
+    font-family: 'Cormorant SC', serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--parchment-light);
+    opacity: 0.5;
+  }
+
+  .show-venue-line {
+    margin-top: 1.2rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.18rem;
+    opacity: 0.9;
+  }
+
+  .show-time {
+    margin-top: 0.6rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.18rem;
+    opacity: 0.65;
   }
 
   .ticket-btn {
@@ -687,20 +673,14 @@
 <section class="show" id="show">
   <div class="section-inner reveal">
     <h2>Shows</h2>
-    <div class="bit-widget-wrap">
-      <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
-      <a class="bit-widget-initializer"
-         data-artist-name="id_15656714"
-         data-display-local-dates="false"
-         data-display-past-dates="false"
-         data-auto-style="false"
-         data-text-color="#F1EBDA"
-         data-link-color="#DCC694"
-         data-background-color="rgba(0,0,0,0)"
-         data-separator-color="rgba(201,179,126,0.35)"
-         data-font="EB Garamond"
-         data-display-limit="10">
-      </a>
+    <div class="show-card">
+      <div class="show-date-block">
+        <span class="month">September</span> <span class="day-num">30</span>
+        <div class="dow">Wednesday</div>
+      </div>
+      <div class="show-venue-line">MadLife Stage and Studios, Woodstock, GA</div>
+      <div class="show-time">7:30 PM</div>
+      <a href="https://www.eventbrite.com/e/fairly-lilith-celebrating-the-women-who-rocked-the-90s-madlife-debut-tickets-1994017038640" class="ticket-btn" target="_blank" rel="noopener">Get Tickets</a>
     </div>
   </div>
 </section>

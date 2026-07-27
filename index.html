@@ -229,7 +229,7 @@
     width: 100%;
     display: block;
     border-radius: 4px;
-    border: 1px solid rgba(201, 179, 126, 0.6);
+    border: 3px solid rgba(201, 179, 126, 0.6);
     box-shadow: 0 40px 90px -25px rgba(0,0,0,0.7);
   }
 
@@ -366,6 +366,32 @@
     margin: 0 auto 1.2rem;
   }
 
+  .contact-label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.18rem;
+    color: var(--oxblood);
+  }
+
+  .contact-email {
+    display: inline-block;
+    margin-top: 1.4rem;
+    font-family: 'Cormorant SC', serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    letter-spacing: 0.03em;
+    color: var(--oxblood);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(92, 31, 31, 0.35);
+    padding-bottom: 4px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .contact-email:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
   .artist-strip {
     margin-top: 2.6rem;
     display: flex;
@@ -400,13 +426,9 @@
   }
 
   .show h2 {
-    font-size: 1.4rem;
+    font-size: 2.6rem;
     color: var(--parchment-light);
-    margin-bottom: 0.4rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-family: 'Cormorant SC', serif;
-    font-weight: 600;
+    margin: 0.6rem 0 1.6rem;
   }
 
   .show .eyebrow { display: block; margin-bottom: 0.8rem; }
@@ -668,7 +690,7 @@
     <div class="bit-widget-wrap">
       <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
       <a class="bit-widget-initializer"
-         data-artist-name="Fairly Lilith"
+         data-artist-name="id_15656714"
          data-display-local-dates="false"
          data-display-past-dates="false"
          data-auto-style="false"
@@ -690,7 +712,7 @@
 <section class="show" id="video">
   <div class="section-inner reveal">
     <h2>Video</h2>
-    <p style="margin-top: 1.2rem; opacity: 0.7;">Coming Soon</p>
+    <p style="margin-top: 1.2rem; opacity: 0.7; font-size: 1.18rem;">Coming Soon</p>
   </div>
 </section>
 
@@ -701,8 +723,8 @@
 <section class="about reveal" id="contact">
   <div class="section-inner">
     <h2>Contact</h2>
-    <p>Booking and Inquiries</p>
-    <p><a href="mailto:booking@fairlylilith.com">booking@fairlylilith.com</a></p>
+    <span class="contact-label">Booking and Inquiries</span>
+    <a href="mailto:booking@fairlylilith.com" class="contact-email">booking@fairlylilith.com</a>
   </div>
 </section>
 

@@ -418,6 +418,61 @@
     font-style: normal;
   }
 
+  /* ===== Video player + gallery ===== */
+  .video-now { display: block; margin: 0 0 1.2rem; font-size: 1rem; }
+  .video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border: 2px solid var(--gold);
+    border-radius: 3px;
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+    background: var(--indigo-deep);
+  }
+  .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-picker { margin-top: 3rem; }
+  .video-picker[hidden] { display: none; }
+  .video-picker h3 {
+    font-size: 1.15rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.6rem;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.4rem;
+  }
+  .video-thumb {
+    appearance: none;
+    background: rgba(232,223,200,0.03);
+    border: 2px solid rgba(201,179,126,0.3);
+    border-radius: 3px;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    color: var(--parchment-light);
+    font: inherit;
+    text-align: center;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .video-thumb:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .video-thumb:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
+  .video-thumb.active { border-color: var(--gold-bright); }
+  .video-thumb img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .video-thumb span {
+    display: block;
+    padding: 0.7rem 0.6rem;
+    font-family: 'Cormorant SC', serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+  }
+
   /* ===== Show info ===== */
   .show {
     background: var(--indigo-deep);
@@ -692,7 +747,14 @@
 <section class="show" id="video">
   <div class="section-inner reveal">
     <h2>Video</h2>
-    <p style="margin-top: 1.2rem; opacity: 0.7; font-size: 1.18rem;">Coming Soon</p>
+    <span class="eyebrow video-now" id="videoTitle">Live Promo</span>
+    <div class="video-frame">
+      <iframe id="videoPlayer" src="https://www.youtube-nocookie.com/embed/SQj8g9Ihnno" title="Fairly Lilith video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="video-picker" id="videoPicker" hidden>
+      <h3>Select a Video</h3>
+      <div class="video-grid" id="videoGrid"></div>
+    </div>
   </div>
 </section>
 
@@ -745,5 +807,44 @@
   revealEls.forEach(el => observer.observe(el));
 </script>
 
+<script>
+  // Video gallery: add a line to this list for each new video.
+  // id = the part after v= in the YouTube link. The picker appears automatically once there are 2+ videos.
+  const VIDEOS = [
+    { id: 'SQj8g9Ihnno', title: 'Live Promo' }
+    // { id: 'XXXXXXXXXXX', title: 'Song Title' },
+  ];
+
+  (function () {
+    const player = document.getElementById('videoPlayer');
+    const titleEl = document.getElementById('videoTitle');
+    const picker = document.getElementById('videoPicker');
+    const grid = document.getElementById('videoGrid');
+    if (!player || VIDEOS.length < 2) return;
+
+    VIDEOS.forEach((v, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'video-thumb' + (i === 0 ? ' active' : '');
+      const img = document.createElement('img');
+      img.src = 'https://img.youtube.com/vi/' + v.id + '/maxresdefault.jpg';
+      img.alt = v.title;
+      img.loading = 'lazy';
+      img.onerror = function () { this.onerror = null; this.src = 'https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg'; };
+      const label = document.createElement('span');
+      label.textContent = v.title;
+      b.appendChild(img); b.appendChild(label);
+      b.addEventListener('click', function () {
+        player.src = 'https://www.youtube-nocookie.com/embed/' + v.id + '?autoplay=1';
+        titleEl.textContent = v.title;
+        grid.querySelectorAll('.video-thumb').forEach(t => t.classList.remove('active'));
+        b.classList.add('active');
+        player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      grid.appendChild(b);
+    });
+    picker.hidden = false;
+  })();
+</script>
 </body>
 </html>
